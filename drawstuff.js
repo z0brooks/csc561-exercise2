@@ -161,7 +161,7 @@ function main() {
     var ulc = new Color(255,255,0,255); // upper left corner color: yellow
     var urc = new Color(0,255,255,255); // upper right corner color: cyan
     var llc = new Color(255,0,255,255); // lower left corner color: magenta
-    var lrc = new Color(255, 192, 203); // lower right corner color: pink
+    var lrc = new Color(255,192,203,255); // lower right corner color: pink
     var ulx = 50, uly = 50; // upper left corner position
     var urx = 200, ury = 50; // upper right corner position
     var llx = 200, lly = 150; // lower left corner position
