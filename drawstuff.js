@@ -165,7 +165,7 @@ function main() {
     var ulx = 50, uly = 50; // upper left corner position
     var urx = 200, ury = 50; // upper right corner position
     var llx = 200, lly = 150; // lower left corner position
-    var lrx = 210, lry = 150; // lower right corner position
+    var lrx = 50, lry = 150; // lower right corner position
     
     // set up the vertical interpolation
     var lc = ulc.clone();  // left color
@@ -184,7 +184,9 @@ function main() {
         hc.copy(lc); // begin with the left color
         hcDelta.copy(rc).subtract(lc).scale(hDelta); // reset horiz color delta
         for (var x=ulx; x<=urx; x++) {
-            drawPixel(imagedata,x,y,hc);
+            if (y - x < Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2))) {
+                drawPixel(imagedata,x,y,hc);
+            }
             hc.add(hcDelta);
         } // end horizontal
         lc.add(lcDelta);
