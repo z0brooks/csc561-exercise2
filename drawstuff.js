@@ -184,7 +184,7 @@ function main() {
         hc.copy(lc); // begin with the left color
         hcDelta.copy(rc).subtract(lc).scale(hDelta); // reset horiz color delta
         for (var x=ulx; x<=urx; x++) {
-            if (y - x < Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2))) {
+            if (y * (urx - ulx) <= x * (lly - uly)) {
                 drawPixel(imagedata,x,y,hc);
             }
             hc.add(hcDelta);
